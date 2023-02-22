@@ -1,0 +1,44 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-radius: 7px;
+
+    background-color: #FFF;
+    width: 500px;
+    height: 60px;
+
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.labels {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.labels input {
+    border: none;
+    height: 15px;
+    padding-left: 4px;
+}
+
+.labels small {
+    height: 15px;
+}
+
+#buttonEdit {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

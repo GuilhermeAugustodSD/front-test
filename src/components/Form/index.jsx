@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { api } from "../../services/api";
+import { Link } from 'react-router-dom';
 
 import './index.css'
+import { type } from '@testing-library/user-event/dist/type';
 
 export function Form() {
   
 
   const [sectors, setSectors] = useState();
+  const [term, setTerm] = useState();
+  const [select, setSelect] = useState();
+  const [name, setName] = useState();
 
   useEffect(() => {
     async function fetchBuscaPorData() {
@@ -17,9 +22,27 @@ export function Form() {
     fetchBuscaPorData();
     
   },[])
-
+  
+  console.log(select);
   async function handleSaveData(){
-    await api.post("/");
+    
+    if(!term) {
+      return alert("Term compliance is mandatory!");
+    }
+
+    await api.post("/", {
+      name,
+      sectors: select,
+      term
+    });
+
+    setName()
+    setSelect()
+    setTerm()
+  }
+
+  function handleSaveSelect(e){
+    setSelect(e.target.value)
   }
 
   return (
@@ -29,12 +52,12 @@ export function Form() {
             <form onSubmit={handleSaveData}>
                 <div className='label-div'>
                   <label htmlFor="nome">Name:</label>
-                  <input type="text" id="nome" name="name"  />
+                  <input type="text" id="nome" name="name"  onChange={(e) => setName(e.target.value)} />
                 </div>
 
                 <div className='label-div'>
                   <label htmlFor="sectors">Sectors:</label>
-                  <select id="sectors" name="sectors" >
+                  <select id="sectors" name="sectors" onChange={(e) => handleSaveSelect(e)}>
                     {
                       sectors &&
                       sectors[0]?.map((optgroup, index) => (
@@ -56,13 +79,13 @@ export function Form() {
                 </div>
                 
                 <div className='term'>
-                  <input type="checkbox" id="termos" name="termos" />
-                  <label htmlFor="termos">Aceitar termos</label>
+                  <input type="checkbox" id="termos" name="termos" onChange={(e) => setTerm(e.target.value)}/>
+                  <label htmlFor="termos">I agree to terms and conditions</label>
                 </div>
 
                 <button type="submit" value="submit">Enviar</button>
             </form>
-            <a href="">Edit your answer</a>
+            <Link to="/editform">Edit your answer</Link>
           </div>
         </div>
     </>

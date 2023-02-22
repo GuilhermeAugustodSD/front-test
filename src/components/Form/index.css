@@ -126,6 +126,9 @@ form button {
     cursor: pointer;
     color: #EFF1F0;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form .term {
