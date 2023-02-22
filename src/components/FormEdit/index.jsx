@@ -47,37 +47,37 @@ export function FormEdit(props) {
           </div>
           
           <div className="labels">
-            <small>Sectors:</small>
-            <small>{text}</small>
+            <small>Sector: {text}</small>
           </div>
         </div>
+        <div className="content-update">
+          <input type="text" placeholder={props.name} onChange={(e) => setName(e.target.value)}/>
 
-        <input type="text" placeholder={props.name} onChange={(e) => setName(e.target.value)}/>
-        <select name="sectors2" id="sectors2" onChange={(e) => setSectorsBancoUpdate(e.target.value)}>
+          <select name="sectors2" id="sectors2" onChange={(e) => setSectorsBancoUpdate(e.target.value)}>
 
-          {
-            sectorsBanco &&
-            sectorsBanco[0]?.map((optgroup, index) => (
-              <optgroup label={optgroup.text} key={optgroup.id}>
-                {
-                  sectorsBanco[1]?.map((option) => (
-                    <>
-                      { optgroup.id === option.optgroups_id ?
-                        <option value={option.value}>{option.text}</option>
-                        : ""
-                      }
-                    </>
-                  ))
-                }
-              </optgroup>
-            ))
-          }
-        </select>
-        <button type="submit" value="submit" id='buttonEdit'>
-          <FiSave />
-        </button>
+            {
+              sectorsBanco &&
+              sectorsBanco[0]?.map((optgroup, index) => (
+                <optgroup label={optgroup.text} key={optgroup.id}>
+                  {
+                    sectorsBanco[1]?.map((option) => (
+                      <>
+                        { optgroup.id === option.optgroups_id ?
+                          <option value={option.value}>{option.text}</option>
+                          : ""
+                        }
+                      </>
+                    ))
+                  }
+                </optgroup>
+              ))
+            }
+          </select>
 
-        {/* <button type='submit' onSubmit={handleRemoveAnswer(props.id)}></button> */}
+          <button type="submit" value="submit" id='buttonEdit'>
+            <FiSave />
+          </button>
+        </div>
       </form>
     </>
   );

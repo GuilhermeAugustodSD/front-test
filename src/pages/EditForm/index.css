@@ -36,3 +36,17 @@ a {
     overflow-y: scroll;
 
 }
+
+.formsEdit::-webkit-scrollbar {
+    width: 12px;                  /* width of the entire scrollbar */
+}
+  
+.formsEdit::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+}
+  
+.formsEdit::-webkit-scrollbar-thumb {
+background-color: #68625C;    /* color of the scroll thumb */
+border-radius: 20px;       /* roundness of the scroll thumb */
+}
+  
