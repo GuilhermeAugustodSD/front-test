@@ -1,0 +1,143 @@
+.container-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #cec3bcda;
+    border-radius: 7px;
+    height: 500px;
+    margin: auto;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #383836;
+
+    text-decoration: none;
+}
+
+.container a:hover {
+    color: #7c7c77;
+}
+
+@media (max-width: 814px){
+    .container {
+        padding: 0 24px ;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 450px){
+    .container {
+        padding: 0 32px;
+        margin: 0 24px;
+        max-width: 300px;
+    }
+}
+
+/* .container::before {
+    content: '';
+    position: relative;
+    z-index: -1;
+    width: 600px;
+    height: 755px;
+    background: rgba(42, 37, 33, 0.72);
+    border-radius: 7px;
+    margin-left: -400px;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label-div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label-div label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #383836;
+}
+
+.label-div input {
+    background: #EFF1F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    height: 45px;
+    border: none;
+    padding-left: 20px;
+}
+
+.label-div input::hover {
+    border: none;
+}
+
+
+.label-div select {
+    background: #EFF1F0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    height: 45px;
+    border: none;
+    padding: 0 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    color: #3838366e;
+}
+
+form button {
+    background: #9F7E5E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    color: #EFF1F0;
+    font-weight: bold;
+}
+
+form .term {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #383836;
+
+}
